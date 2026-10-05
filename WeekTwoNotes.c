@@ -102,3 +102,4 @@ int main(){
 // you can go from int = number to number = A because each character can turn into an int value. 
 // casting operator converts one data type to another
 // 0 is false and 1 is true for c, anything >0 is true
+// if code compiles and runs then it is verified to work.
