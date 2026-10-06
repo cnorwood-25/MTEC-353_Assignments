@@ -1,0 +1,9 @@
+**Week 3 Process Journal**
+1. Technical Challenge & Solution Process: What specific concepts, algorithms, or implementation problems did you encounter and solve?
+    We did a lot today on the basics of C++ and we covered specificaally the big differnece between C which is the object oriented aspect of c++. To work on this, we worked in a group on the group activity related to inheritance in the midi note. It covered the importance of declaring whether attributes in a class are public, private, or protected. This was very challenging and i will need to work a lot more in the future. 
+
+2. Collaborative Learning Insights: What did you learn from the activities and your teammates that you wouldn't have discovered working alone?
+    SIt was very good to work with a teammate in these exercises. In the first small activity, I was able to how there is a lot of layers to the way things work in daws - for example the mix knob in a delay is an attibute, and the dealy is an attribute on a track processing, and that track is an attribute to the master fader. Addtionally, for the last exercise it was easier to understand the topics of inheritance, constructors, and getters and setters, since i had to explain to my teammate how we should approach the problem. 
+    
+3. Reflection & Next Steps: What questions or concepts do you want to explore further?
+    I need just a lot of practice with these topics and i am excited to dive into the lab exercises to get my hands dirty. I am curious to know more about how objects and classes affect specifcally midi system messsages because that topic feels very pertinent to what we will eventually create. I am also curious to learn about inlining and how that may be helpful for dsp and making our code run smoothly at high sample rates. 
