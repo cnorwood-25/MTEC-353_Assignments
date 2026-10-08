@@ -132,8 +132,57 @@ Memory Efficiency: Compare passing pointers vs. copying structs
 **Follow-up Needed:** Since these are still concepts and i understand them, no clarification is needed. 
 
 **Exchange 4** 
-**My Prompt:** 
-**Why I Asked:** 
+**My Prompt:** Im having some trouble with using pointers to fill out the melodic array in the program below, what would help me with that? 
+#include <stdio.h>
+#include <stdlib.h> //AI
+#include <time.h> //AI
+
+
+enum Scale {MAJOR, MINOR, PENTATONIC};
+struct Note 
+{
+    unsigned char pitch; 
+    float duration;
+    unsigned char velocity;
+};
+
+typedef struct Note Note;
+
+int major_scale [] = {0, 2, 4, 5, 7, 9, 11};
+int minor_scale [] = {0, 2, 3, 5, 7, 8, 10};
+int pentatonic_scale [] = {0, 2, 4, 7, 9};
+
+void generate_melody(Note* melody, int length, enum Scale scale_type, int root_note){
+    srand(time(NULL)); // AI
+    int r = rand(); // AI
+    char melodicDegree[] = {};
+    char melodicSequence[] = {};
+    scanf("Which Key?", &root_note);
+    scanf("How long is the melody?", &length);
+
+    if (length <= 16 && length >= 0){
+        for (int i = 0; i < length; i++ ){
+        melody->pitch = r % 7;
+        char *degree = major_scale[melody->pitch];
+
+        }
+    }
+    else {
+        printf("The melody does not fit bounds of 0-16");
+    }
+    
+
+}
+
+int main(){
+    generate_melody();
+    Note midinote = {64, 1.5, 100};
+
+    printf("%d\n", midinote.pitch);
+}
+
+
+**Why I Asked:** I wrote this program which was a very good start, but i was having trouble identifying how to include the pointer arryas to take the random sequence and assign it to the melody. 
 **AI Response:** 
 **Effectiveness:** 
 **What I Learned:** 
