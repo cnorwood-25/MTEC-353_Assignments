@@ -47,7 +47,7 @@ int main(){
 
     if (length > 16 || length < 0){
         printf("The melody does not fit bounds of 0-16");
-        return 1; //ai incldued this to end porgram if wrong length is entered
+        return 1; //ai incldued this to end program. I learned that this is telling teh computer essentially how many errors the code endoucntered, any non 0 integer gets evaluatedas true there is an error and ends it. 
     }
 
     Note melodicSequence[16];
