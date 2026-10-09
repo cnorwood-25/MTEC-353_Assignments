@@ -18,12 +18,21 @@ int minor_scale [] = {0, 2, 3, 5, 7, 8, 10};
 int pentatonic_scale [] = {0, 2, 4, 7, 9};
 
 void generate_melody(Note* melody, int length, enum Scale scale_type, int root_note){
+    int *scale;
+    int size;
 
+    switch (scale_type){  //ai
+        case MAJOR: scale = major_scale; size = 7; break; //ai
+        case MINOR: scale = minor_scale; size = 7; break; //ai
+        case PENTATONIC: scale = pentatonic_scale; size = 7; break;  //ai
+    }
     
     for (int i = 0; i < length; i++ ){
-            int r = rand(); // AI
-            (melody+i)->pitch = r % 7;   //ai suggested the + i in melody
-            int *degree = major_scale[melody->pitch];   //ai said to use int isntead of char
+            int degree = rand(); 
+            int duration = rand(); 
+            melody[i].pitch = root_note + scale[degree];   //ai 
+            melody[i].duration = random() % 4 ;
+            melody[i].velocity = 64 + rand() % 63;
 
         }
 }

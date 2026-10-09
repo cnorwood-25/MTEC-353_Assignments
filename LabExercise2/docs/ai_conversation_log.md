@@ -183,10 +183,42 @@ int main(){
 
 
 **Why I Asked:** I wrote this program which was a very good start, but i was having trouble identifying how to include the pointer arryas to take the random sequence and assign it to the melody. 
-**AI Response:** 
-**Effectiveness:** 
-**What I Learned:** 
-**Follow-up Needed:** 
+**AI Response:** 1. melody->pitch never moves.
+melody points to the first Note, so every loop iteration writes to element 0. Use melody[i] or advance the pointer:
+
+c
+melody[i].pitch = ...;      // index form
+(melody + i)->pitch = ...;  // pointer form
+
+2. char melodicDegree[] = {}; is a zero-size array.
+It can’t hold anything. Delete these two lines. The melody array itself is where results go.
+
+3. char *degree = major_scale[...] is a type mismatch.
+major_scale[x] is an int, not a pointer. Just use an int.
+
+4. scanf doesn’t take a prompt.
+The first argument is a format string like "%d". Print the prompt with printf, then read:
+
+c
+printf("Which key? ");
+scanf("%d", &root_note);
+
+Better still, do input in main, and let generate_melody only generate.
+
+5. r is computed once.
+Every note would get the same value. Call rand() inside the loop. Also call srand once in main, not in the function.
+
+6. Scale type is ignored.
+Pick the scale array and its size from scale_type, then use that size instead of the hardcoded 7 (pentatonic has 5 notes).
+
+7. main calls generate_melody() with no arguments and never creates a melody array.
+
+8. Pitch needs a root and octave.
+r % 7 is a degree (0-6), not a MIDI pitch. Convert it: root_note + scale[degree].
+
+**Effectiveness:**  5, this was a very helpful way to see all the mistakes I wrote and how to fix them. 
+**What I Learned:** I corrected a mistake with how i was using scanf, figured out how to implement the pointers, and now the program is running better. This was a great way of approachign it because instead of askign the AI to do it for me, I just did the best i could, uploaded and used it as a teaching tool rather than a doing tool. 
+**Follow-up Needed:** I will implement the AI suggestions and use verification processes to ensure correct programming. 
 
 **Exchange 5** 
 **My Prompt:** 
