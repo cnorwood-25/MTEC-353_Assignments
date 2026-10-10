@@ -269,6 +269,8 @@ int duration = rand(); is unused.
 Memory Management Insights
 
 When did AI explanations clarify pointer behavior?
-    This was a really good usage of AI because when i didnt understand pointer behavior, i could ask it 
+    This was a really good usage of AI because when i didnt understand pointer behavior, i could ask it to clarify. THe big thing i learned was that melody->pitch only prints the first value in note, which is a lot different than (melody + i)->pitch because that iterates through the pointer for the array index. AI also had a really good explanation of enum which clarified a lot for me. 
 What misconceptions did AI help correct?
+    The misconcpetion about pointers for arry indexing written above, the enum clarification, and the benefit of using typedef so we dont have to say sruct note every time.
 Where did you need to verify AI suggestions through testing?
+    Every code suggestion AI made I tested to make sure it compiled and ran the prgoram as intended before siolidifying the implementation. It did not make any mistakes, which is very cool. 

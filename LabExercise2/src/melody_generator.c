@@ -81,7 +81,7 @@ int main(void){
     Note melody[16];
     generate_melody(melody, length, scale_type, root_note);
     
-    printf("\n Here is the melody in the form note, frequency, and duration:\n");
+    printf("\n Here is the melody in the form note, frequency, and duration in beats:\n");
     for (int i = 0; i < length; i++){ //AI
          printf("%-2d %-6d %-9.2f %-6.2f ",    //ai formatting suggestion, basically goes left to write and the -2 is a minimum character width allocation, with the dots in floating point being the rounding. 
                i + 1, (melody + i)->pitch,
