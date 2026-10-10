@@ -25,7 +25,7 @@ double midi_to_frequency(int midi) {
 void generate_melody(Note *melody, int length, enum Scale scale_type, int root_note){
     int *scale;
     int size;
-    float duration[] = {0.25, 0.5, 1.0, 2.0};
+    float durations[] = {0.25, 0.5, 1.0, 2.0};
 
     switch (scale_type){  //ai
         case MAJOR: scale = major_scale; size = 7; break; //ai
@@ -36,7 +36,7 @@ void generate_melody(Note *melody, int length, enum Scale scale_type, int root_n
     for (Note *p = melody; p < melody + length; p++){ //ai
             int degree = rand() % size; 
             p->pitch = root_note + scale[degree]; 
-            p->duration = duration[rand()%4];
+            p->duration = durations[rand()%4];
             p->velocity = 64 + rand()% 64;
 
         }
@@ -47,6 +47,7 @@ void print_rhythm(float duration) { // ai
     printf("#");   //ai
     for (int i = 1; i < units; i++){ //ai
         printf("-"); //ai
+        
     }   //ai
 }
 
@@ -54,11 +55,11 @@ int main(void){
     srand(time(NULL)); // AI
     int choice, root_note, length;
 
-    printf("Enter melody length 1-16\n");
+    printf("Enter melody length 4-16\n");
     scanf("%d", &length);
 
     if (length > 16 || length < 4){
-        printf("The melody does not fit bounds of 0-16");
+        printf("The melody does not fit bounds of 4-16");
         return 1; //ai incldued this to end program. I learned that this is telling teh computer essentially how many errors the code endoucntered, any non 0 integer gets evaluatedas true there is an error and ends it. 
     }
 
@@ -74,16 +75,21 @@ int main(void){
     if (root_note < 0 || root_note > 100) {
         printf("Invalid root note.\n");
         return 1;
-    
+    }
     enum Scale scale_type = (enum Scale)choice; // ai
 
-    Note melodicSequence[16];
-    //generate_melody(melody, length, choice, root_note);
+    Note melody[16];
+    generate_melody(melody, length, scale_type, root_note);
+    
+    printf("\n Here is the melody in the form note, frequency, and duration:\n");
     for (int i = 0; i < length; i++){ //AI
-        printf("%d\n", melodicSequence[i]);
+         printf("%-2d %-6d %-9.2f %-6.2f ",    //ai formatting suggestion, basically goes left to write and the -2 is a minimum character width allocation, with the dots in floating point being the rounding. 
+               i + 1, (melody + i)->pitch,
+               midi_to_frequency((melody + i)->pitch),
+               (melody + i)->duration);
+        print_rhythm((melody+i)->duration);
+        printf("\n");
        }   
+    
     return 0;
-    //     Note midinote = {64, 1.5, 100};
-
-    // printf("%d\n", midinote.pitch);
-}
+   }

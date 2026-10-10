@@ -1,4 +1,11 @@
-Used Claude Sonnet 5.5 medium. 5 Exchanges. Roughly 6 hours of work with AI. 
+Session metadata
+
+Used Claude Sonnet 5.5 medium. 6 Exchanges. Roughly 5.5 hours of work with AI. 
+
+
+Critical learning exchanges 
+
+
 **Exchange 1** 
 **My Prompt:** In c coding, tell me about musical scale theory and data organization trade-offs
 **Why I Asked:** The instructions encouraged me to investigate this further using AI
@@ -244,6 +251,24 @@ generate_melody is never called, and you print melodicSequence uninitialized.
 Length check should be 4-16 per your spec.
 int duration = rand(); is unused.
 
-**Effectiveness:** 
+**Effectiveness:**  5, incredibly effective and very helpful to learn about the concpets i misunderstood. 
 **What I Learned:** I got great clarification on the enum process, which is that it assigns 0, 1, or 2 and based on what number is inputed you use the switch object to correlate that to which scale to use. It also corrected some other bugs in my code which was helpful to see. I like this process of me trying to write the program out, failing, and using AI as a resource to further my devleopment. Since included the specs of the program, it gave me some helpfyl interfacing tips and ideas for the CLI. 
 **Follow-up Needed:** I will implement the AI coding suggestions and see if they work as intended, if they do not, I will continue to follow up until it is correct.
+
+
+**Exchange 6** 
+**My Prompt:**  In the code, it appears that the ascii design is not reflective of the random length. The duration variable is correctly assigned random lengths, the printing is not reflecting that
+**Why I Asked:** The note duration was not getting reflected in the ascii artwork but was assigned via the pointer correctly to the variable.
+**AI Response:** I was accidenlty using melody->duartion as the variable for the call of print_rhythm, so it was only rpinting the first value. Once i changed it to melody + i it printed correctly all of the values. 
+**Effectiveness:** 5
+**What I Learned:** I learned that i had the oversight of forgetting to do melody + i and that it only prints the first note vlaue if you dont have the + i
+**Follow-up Needed:**  code is completely functional now, no follow up needed. 
+
+
+
+Memory Management Insights
+
+When did AI explanations clarify pointer behavior?
+    This was a really good usage of AI because when i didnt understand pointer behavior, i could ask it 
+What misconceptions did AI help correct?
+Where did you need to verify AI suggestions through testing?
