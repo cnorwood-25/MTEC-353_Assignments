@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.15)
+project(MultiFiles)
+
+add_executable(multi_files
+main.cpp
+modules.cpp
+)

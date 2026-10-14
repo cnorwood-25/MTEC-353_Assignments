@@ -1,0 +1,9 @@
+**Week 5 Process Journal**
+1. Technical Challenge & Solution Process: What specific concepts, algorithms, or implementation problems did you encounter and solve?
+    A nice challenge that I encountered this week was learning about virtual fuinctions and overrides. It was cool because in my pre assignmment I actually guessed that an audio programming application to virtual functions would be midi, so it qas quite exciting to see that come into reality. In terms of programming, we needed to have a display() that got overriden in each subclass of the midi message so we could display specifically what we wanted (note length, pitch, control change, etc).
+
+2. Collaborative Learning Insights: What did you learn from the activities and your teammates that you wouldn't have discovered working alone?
+    It was wonderful to collaborate in this process and I gained a better understanding of getters and setters in the teamwork process. They are essentialyl ways of tracking how you send public methods. This allows for you to not write a field on the actual attribvute, but instead have this function do it for you. I learned its better for troubleshooting and good coding practice. 
+    
+3. Reflection & Next Steps: What questions or concepts do you want to explore further?
+    I am excited to look at JUCE and start gettting some audio going! I enjoyed the compilation process, and I think i conceptually get it. However, to reproduce it as accurately as i need to, I'm definitely going to need som epractice. I also liked seeing the .h file because it made sense why #include <stdio.h> has the .h. Very interesting, and im excited to explore having those multiple files interworking more. 
